@@ -37,6 +37,12 @@ zig build test
 
 Requires Zig `0.16.0` (`nix develop` or `direnv allow` provides it).
 
+## Releases
+
+Pushing a tag that starts with `v` (e.g. `git tag v0.1.0 && git push origin v0.1.0`) runs `.github/workflows/release.yml`.
+The workflow renders `pulse.wav` with `nix build` and attaches it, together with `SHA256SUMS`, to the GitHub Release
+for that tag.
+
 ## Source layout
 
 | File | Contents |
