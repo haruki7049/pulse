@@ -1,0 +1,38 @@
+.{
+    .name = .pulse,
+    .version = "0.1.0",
+    .fingerprint = 0x1b16cada9a6dbaeb, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0",
+
+    .dependencies = .{
+        .lightmix = .{
+            .url = "https://github.com/haruki7049/lightmix/archive/refs/tags/0.26.0.tar.gz",
+            .hash = "lightmix-0.26.0-SpCovCZcBQBv6Mc5F-Jb99lcspkm-5Bo3m3nowSHKoW3",
+        },
+        .phrases = .{
+            .url = "git+https://github.com/haruki7049/phrases#524d42fa408e0834efcd2835e0e9a849ea1bd238",
+            .hash = "phrases-0.1.0-m8uXUcJ5AADNbVNrVA3b_IUJpXPL_dt4kXmkRWEacj9n",
+        },
+        .resonator = .{
+            .url = "git+https://github.com/haruki7049/resonator#d429ffaaa591c2f2407661e21965b08bbdfb2ca6",
+            .hash = "resonator-0.1.0-_vVfzphiAACB2Sl3XGOZoDx7rICvskMPRRnjU4M62hLN",
+        },
+        .sequencer = .{
+            .url = "git+https://github.com/haruki7049/sequencer#85bac759dce8280c958ac74c7fe3fe0c21bf8d46",
+            .hash = "sequencer-0.1.0-hrnV-wx5AQD4WgfSSsE7Ek0_cBAKoTRrTc01v0-1TMTy",
+        },
+        .timbrefolio = .{
+            .url = "git+https://github.com/haruki7049/timbrefolio#96302d73869d77fb1bbd11b4b579094e3ebc6f2c",
+            .hash = "timbrefolio-0.1.0-7RpquhDeAAAWunXgJwvgvZGDIcNyG3P8h2ntHjRw-dDm",
+        },
+    },
+
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "README.md",
+    },
+}
