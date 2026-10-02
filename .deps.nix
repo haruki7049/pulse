@@ -41,7 +41,7 @@ linkFarm "zig-packages" [
     name = "sequencer-0.1.0-hrnV-wx5AQD4WgfSSsE7Ek0_cBAKoTRrTc01v0-1TMTy";
     path = fetchgit {
       url = "https://github.com/haruki7049/sequencer";
-      rev = "85bac759dce8280c958ac74c7fe3fe0c21bf8d46";
+      rev = "110fea68cb48ffe0a7f968c87dc3e7de2529175a";
       hash = "sha256-zSQluriVQEymbXj7f3nBsxoqDRShOcNa4zR5y+C8Sho=";
     };
   }

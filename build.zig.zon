@@ -18,7 +18,7 @@
             .hash = "resonator-0.1.0-_vVfzphiAACB2Sl3XGOZoDx7rICvskMPRRnjU4M62hLN",
         },
         .sequencer = .{
-            .url = "git+https://github.com/haruki7049/sequencer#85bac759dce8280c958ac74c7fe3fe0c21bf8d46",
+            .url = "git+https://github.com/haruki7049/sequencer#110fea68cb48ffe0a7f968c87dc3e7de2529175a",
             .hash = "sequencer-0.1.0-hrnV-wx5AQD4WgfSSsE7Ek0_cBAKoTRrTc01v0-1TMTy",
         },
         .timbrefolio = .{
