@@ -48,11 +48,19 @@ pub const Voice = enum {
             .kick => 0.40,
             .snare => 0.30,
             .closed_hihat => 0.16,
-            .open_hihat => 1.00,
+            .open_hihat => 0.60,
             .high_tom, .mid_tom, .floor_tom => 0.50,
         };
     }
 };
+
+/// Mix gain applied to every open hi-hat hit (about -3.7 dB), so it sits in the kit instead of
+/// standing out over it.
+pub const open_hihat_gain: T = 0.65;
+
+/// Open hi-hat decay rate. -60 dB is reached after about 6.9 / 12 = 0.58 s (just under two beats
+/// at 190 BPM), so an unchoked open hat stays tight at this tempo.
+pub const open_hihat_decay_rate: T = 12.0;
 
 /// Synthesizes one hit of `voice` at `velocity` (0.0 to 1.0).
 pub fn gen(allocator: std.mem.Allocator, voice: Voice, velocity: T) !lightmix.Wave(T) {
@@ -65,7 +73,7 @@ pub fn gen(allocator: std.mem.Allocator, voice: Voice, velocity: T) !lightmix.Wa
         .kick => drums.kick.Kick.gen(T, allocator, sample_rate, channels, length, velocity, .{}),
         .snare => drums.snare.Snare.gen(T, allocator, sample_rate, channels, length, velocity, .{}),
         .closed_hihat => drums.closed_hihat.ClosedHihat.gen(T, allocator, sample_rate, channels, length, velocity, .{}),
-        .open_hihat => drums.open_hihat.OpenHihat.gen(T, allocator, sample_rate, channels, length, velocity, .{ .decay_rate = 6.0 }),
+        .open_hihat => drums.open_hihat.OpenHihat.gen(T, allocator, sample_rate, channels, length, velocity * open_hihat_gain, .{ .decay_rate = open_hihat_decay_rate }),
         .high_tom => drums.tom.Tom.gen(T, allocator, sample_rate, channels, length, velocity, .{ .start_frequency = 260.0, .end_frequency = 180.0 }),
         .mid_tom => drums.tom.Tom.gen(T, allocator, sample_rate, channels, length, velocity, .{}),
         .floor_tom => drums.tom.Tom.gen(T, allocator, sample_rate, channels, length, velocity, .{ .start_frequency = 140.0, .end_frequency = 85.0 }),
@@ -81,6 +89,20 @@ test "hi-hats share a lane and every voice maps to a kit lane" {
     inline for (.{ Voice.high_tom, Voice.mid_tom, Voice.floor_tom }) |v| {
         try std.testing.expectEqual(Lane.tom, v.lane());
     }
+}
+
+test "open hi-hat is attenuated and decays within its rendered length" {
+    const allocator = std.testing.allocator;
+    var wave = try gen(allocator, .open_hihat, 1.0);
+    defer wave.deinit();
+
+    var peak: T = 0;
+    for (wave.samples) |s| peak = @max(peak, @abs(s));
+    try std.testing.expect(peak <= open_hihat_gain + 1e-9);
+
+    // The last frame is below -60 dB of the gained level, so no click when the hit ends.
+    const tail = wave.samples[wave.samples.len - config.CHANNELS ..];
+    for (tail) |s| try std.testing.expect(@abs(s) < open_hihat_gain * 1e-3);
 }
 
 test "gen renders every voice in the configured format" {
