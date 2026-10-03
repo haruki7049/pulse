@@ -15,19 +15,19 @@ linkFarm "zig-packages" [
     };
   }
   {
-    name = "phrases-0.1.0-m8uXUcJ5AADNbVNrVA3b_IUJpXPL_dt4kXmkRWEacj9n";
+    name = "meters-0.1.0-EsVLmyDGAACE-3GCOOjWTlD5YV2ZVUXIxeweZgj5gl5H";
     path = fetchgit {
-      url = "https://github.com/haruki7049/phrases";
-      rev = "524d42fa408e0834efcd2835e0e9a849ea1bd238";
-      hash = "sha256-/JtfGRmsIg5+cx5KIuLTLqgrxS6H3/Dj0/aglpwqNEc=";
+      url = "https://github.com/haruki7049/meters";
+      rev = "567f70a073fc861418f1dc02d05d08de5957e91d";
+      hash = "sha256-xyKazXuRU3do+5JnCgpkyZElEmBT59B5COsyrHDrrQg=";
     };
   }
   {
-    name = "resonator-0.1.0-_vVfzphiAACB2Sl3XGOZoDx7rICvskMPRRnjU4M62hLN";
+    name = "resonator-0.1.0-_vVfzntkAADp3E5l_J_eO8iMSPBnFO_3-SwYredkPCzO";
     path = fetchgit {
       url = "https://github.com/haruki7049/resonator";
-      rev = "d429ffaaa591c2f2407661e21965b08bbdfb2ca6";
-      hash = "sha256-BfopRTnlodTaPmozS2HuwJ64aL7RqH4yVX6F6G/9Nfo=";
+      rev = "e61422fe5325678a57e9001be8b200c398d30d67";
+      hash = "sha256-xCdIkJBwv6WC0fTdnhYixZA/SRpPFjc6qXNJhcspgag=";
     };
   }
   {
@@ -38,11 +38,11 @@ linkFarm "zig-packages" [
     };
   }
   {
-    name = "sequencer-0.1.0-hrnV-wx5AQD4WgfSSsE7Ek0_cBAKoTRrTc01v0-1TMTy";
+    name = "sequencer-0.1.0-hrnV-_R4AQDvqjdwVu-CY1SrUyySNKtZZJ328iV5VHMu";
     path = fetchgit {
       url = "https://github.com/haruki7049/sequencer";
-      rev = "110fea68cb48ffe0a7f968c87dc3e7de2529175a";
-      hash = "sha256-zSQluriVQEymbXj7f3nBsxoqDRShOcNa4zR5y+C8Sho=";
+      rev = "ff28b768820b4fe039037041a627bab160a71c84";
+      hash = "sha256-gLnydlPv5YCVs5GBhkhEC/+fMlbcRnnG1nwQTpyDNg8=";
     };
   }
   {

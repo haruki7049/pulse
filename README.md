@@ -58,9 +58,9 @@ for that tag.
 [`timbrefolio`](https://github.com/haruki7049/timbrefolio) (drum sounds),
 [`sequencer`](https://github.com/haruki7049/sequencer),
 [`resonator`](https://github.com/haruki7049/resonator),
-[`phrases`](https://github.com/haruki7049/phrases) and
+[`meters`](https://github.com/haruki7049/meters) and
 [`lightmix`](https://github.com/haruki7049/lightmix) 0.26.0. All of them resolve to a single `lightmix` and a single
-`phrases` package. A unit test checks this.
+`meters` package. A unit test checks this.
 
 ## License
 

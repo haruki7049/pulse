@@ -7,7 +7,7 @@ pub fn build(b: *std.Build) !void {
 
     // Dependencies
     const lightmix = b.dependency("lightmix", .{});
-    const phrases = b.dependency("phrases", .{ .target = target, .optimize = optimize });
+    const meters = b.dependency("meters", .{ .target = target, .optimize = optimize });
     const resonator = b.dependency("resonator", .{ .target = target, .optimize = optimize });
     const sequencer = b.dependency("sequencer", .{ .target = target, .optimize = optimize });
     const timbrefolio = b.dependency("timbrefolio", .{ .target = target, .optimize = optimize });
@@ -18,7 +18,7 @@ pub fn build(b: *std.Build) !void {
         .optimize = optimize,
         .imports = &.{
             .{ .name = "lightmix", .module = lightmix.module("lightmix") },
-            .{ .name = "phrases", .module = phrases.module("phrases") },
+            .{ .name = "meters", .module = meters.module("meters") },
             .{ .name = "resonator", .module = resonator.module("resonator") },
             .{ .name = "sequencer", .module = sequencer.module("sequencer") },
             .{ .name = "timbrefolio", .module = timbrefolio.module("timbrefolio") },
