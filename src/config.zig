@@ -1,6 +1,6 @@
 //! Global tempo and audio format of the drum solo.
 
-const phrases = @import("phrases");
+const meters = @import("meters");
 
 /// Sample type used for synthesis and mixing.
 pub const T = f64;
@@ -8,7 +8,7 @@ pub const T = f64;
 /// Tempo in quarter-note beats per minute.
 pub const BPM: usize = 190;
 /// Meter of the whole piece.
-pub const TIME_SIGNATURE: phrases.TimeSignature = .{ .numerator = 4, .denominator = 4 };
+pub const TIME_SIGNATURE: meters.TimeSignature = .{ .numerator = 4, .denominator = 4 };
 /// Length of the piece in bars (~30 seconds at 190 BPM).
 pub const TOTAL_BARS: usize = 24;
 

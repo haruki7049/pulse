@@ -2,7 +2,7 @@
 
 const std = @import("std");
 const lightmix = @import("lightmix");
-const phrases = @import("phrases");
+const meters = @import("meters");
 const sequencer = @import("sequencer");
 const config = @import("./config.zig");
 const kit = @import("./kit.zig");
@@ -37,7 +37,7 @@ pub fn render(allocator: std.mem.Allocator) !lightmix.Wave(T) {
 
 /// Number of frames in `TOTAL_BARS` bars.
 pub fn totalFrames() !usize {
-    const end = phrases.Position{ .bar = config.TOTAL_BARS };
+    const end = meters.Position{ .bar = config.TOTAL_BARS };
     return end.toSampleOffset(config.BPM, config.TIME_SIGNATURE, config.SAMPLE_RATE);
 }
 
@@ -76,7 +76,7 @@ test "render produces exactly 24 bars normalized to the target peak" {
     try std.testing.expectApproxEqAbs(config.PEAK, max, 1e-9);
 
     // The break: by the last beat of the final bar only the tail of the final hit is left (< -60 dB).
-    const last_beat = phrases.Position{ .bar = config.TOTAL_BARS - 1, .beat = 3.0 };
+    const last_beat = meters.Position{ .bar = config.TOTAL_BARS - 1, .beat = 3.0 };
     const start = try last_beat.toSampleOffset(config.BPM, config.TIME_SIGNATURE, config.SAMPLE_RATE);
     for (wave.samples[start * config.CHANNELS ..]) |s| try std.testing.expect(@abs(s) < 1e-3);
 }
