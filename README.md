@@ -22,6 +22,20 @@ on the same lane with a short micro-fade:
 | 2 | Closed and open hi-hat (a closed hat chokes a ringing open hat) |
 | 3 | High, mid and floor tom |
 
+## Score
+
+The score is written as data, one [`meters`](https://github.com/haruki7049/meters) `Phrase` per lane in
+`src/score/<lane>.zon`, loaded at compile time. Each line is one hit:
+
+```zig
+.{ .bar = 1, .beat = 1.5, .note = .{ .voice = .open_hihat, .velocity = 0.75 } },
+```
+
+`bar` is 0-indexed and `beat` counts quarter notes from the start of the bar, so a 16th note is `0.25` beats. In
+`.note`, `.voice` defaults to the lane's main voice (`kick`, `snare`, `closed_hihat`, `mid_tom`) and `.velocity` to
+`1.0`, so `.note = .{}` is a full-velocity hit of that voice. Notes in a file are in time order; a unit test checks
+this, along with each note's voice belonging to the file's lane.
+
 ## Building
 
 ```sh
@@ -49,7 +63,8 @@ for that tag.
 | :--- | :--- |
 | `src/config.zig` | Tempo, meter, length and audio format |
 | `src/kit.zig` | Drum voices, their lanes, and timbrefolio synthesis settings |
-| `src/pattern.zig` | The score, written directly in Zig |
+| `src/score/*.zon` | The score: one `meters.Phrase` per kit lane (`kick`, `snare`, `hihat`, `tom`) |
+| `src/score.zig` | Loads the lane scores and checks them |
 | `src/song.zig` | Places the score on a sequencer and renders, pads and normalizes the mix |
 | `src/root.zig` | `gen` entry point used by `lightmix.addWave` |
 

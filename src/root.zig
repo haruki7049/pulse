@@ -1,7 +1,8 @@
 //! pulse: a 24-bar drum solo at 190 BPM.
 //!
-//! The score (`pattern.zig`) is placed on a four-lane `resonator.Instrument` drum kit inside a
-//! `sequencer.Sequencer`, voiced with timbrefolio drums (`kit.zig`), and rendered by lightmix.
+//! The score (`score.zig`, one `meters.Phrase` per lane in `score/*.zon`) is placed on a
+//! four-lane `resonator.Instrument` drum kit inside a `sequencer.Sequencer`, voiced with
+//! timbrefolio drums (`kit.zig`), and rendered by lightmix.
 //! `zig build` turns `gen` into `zig-out/share/pulse.wav`.
 
 const std = @import("std");
@@ -18,7 +19,7 @@ test {
     std.testing.refAllDecls(@This());
     _ = @import("./config.zig");
     _ = @import("./kit.zig");
-    _ = @import("./pattern.zig");
+    _ = @import("./score.zig");
     _ = @import("./song.zig");
 }
 
