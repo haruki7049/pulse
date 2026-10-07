@@ -22,11 +22,11 @@ test {
     _ = @import("./song.zig");
 }
 
-test "dependencies share one phrases, resonator and lightmix" {
-    const phrases = @import("phrases");
+test "dependencies share one meters, resonator and lightmix" {
+    const meters = @import("meters");
     const resonator = @import("resonator");
     const sequencer = @import("sequencer");
     try std.testing.expect(sequencer.Instrument == resonator.Instrument);
-    try std.testing.expect(resonator.phrases.Position == phrases.Position);
+    try std.testing.expect(resonator.meters.Position == meters.Position);
     try std.testing.expect(@FieldType(sequencer.Event(config.T), "wave") == lightmix.Wave(config.T));
 }
