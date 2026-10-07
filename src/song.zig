@@ -6,25 +6,28 @@ const meters = @import("meters");
 const sequencer = @import("sequencer");
 const config = @import("./config.zig");
 const kit = @import("./kit.zig");
-const pattern = @import("./pattern.zig");
+const score = @import("./score.zig");
 
 const T = config.T;
 
-/// Renders the whole piece: every hit of the score on one four-lane kit instrument,
+/// Renders the whole piece: every lane's score on its lane of one four-lane kit instrument,
 /// padded with silence to exactly `TOTAL_BARS` bars and normalized to `PEAK`.
 pub fn render(allocator: std.mem.Allocator) !lightmix.Wave(T) {
-    const hits = try pattern.score(allocator);
-    defer allocator.free(hits);
-
     var seq = sequencer.Sequencer(T).init(allocator, config.BPM, config.TIME_SIGNATURE, config.SAMPLE_RATE, config.CHANNELS);
     defer seq.deinit();
 
     var drum_kit = try seq.createInstrument("DrumKit", kit.lane_count);
     defer drum_kit.deinit(allocator);
 
-    for (hits) |h| {
-        const wave = try kit.gen(allocator, h.voice, h.velocity);
-        try seq.addInstrument(drum_kit, @intFromEnum(h.voice.lane()), wave, .{ .bar = h.bar, .beat = h.beat });
+    inline for (@typeInfo(kit.Lane).@"enum".fields) |field| {
+        const lane: kit.Lane = @enumFromInt(field.value);
+        const events = try score.phrase(lane).toEvents(allocator, config.BPM, config.TIME_SIGNATURE, config.SAMPLE_RATE);
+        defer allocator.free(events);
+
+        for (events) |event| {
+            const wave = try kit.gen(allocator, event.note.voice, event.note.velocity);
+            try seq.addInstrument(drum_kit, @intFromEnum(lane), wave, event.position);
+        }
     }
 
     var wave = try seq.render();

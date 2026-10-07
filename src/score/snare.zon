@@ -1,0 +1,221 @@
+.{
+    .name = "Snare",
+    .notes = .{
+        // Groove (bars 0-7)
+        // bar 0
+        .{ .bar = 0, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 0, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 1
+        .{ .bar = 1, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 1, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 2
+        .{ .bar = 2, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 2, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 3
+        .{ .bar = 3, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 3, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 4
+        .{ .bar = 4, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 4, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 5
+        .{ .bar = 5, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 5, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 6
+        .{ .bar = 6, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 6, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 7
+        .{ .bar = 7, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 7, .beat = 3.0, .note = .{ .velocity = 0.6 } },
+        .{ .bar = 7, .beat = 3.25, .note = .{ .velocity = 0.7333333333333333 } },
+        .{ .bar = 7, .beat = 3.5, .note = .{ .velocity = 0.8666666666666667 } },
+        .{ .bar = 7, .beat = 3.75, .note = .{} },
+
+        // Ghost-note solo (bars 8-15)
+        // bar 8
+        .{ .bar = 8, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 0.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 8, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 1.75, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 8, .beat = 2.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 2.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 8, .beat = 2.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 8, .beat = 3.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 3.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 8, .beat = 3.75, .note = .{ .velocity = 0.18 } },
+
+        // bar 9
+        .{ .bar = 9, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 9, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 1.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 2.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 2.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 2.75, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 9, .beat = 3.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 9, .beat = 3.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 9, .beat = 3.75, .note = .{ .velocity = 0.18 } },
+
+        // bar 10
+        .{ .bar = 10, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 0.75, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 10, .beat = 1.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 1.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 10, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 2.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 2.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 10, .beat = 3.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 3.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 10, .beat = 3.75, .note = .{ .velocity = 0.18 } },
+
+        // bar 11
+        .{ .bar = 11, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 0.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 11, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 2.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 2.25, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 11, .beat = 2.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 11, .beat = 3.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 11, .beat = 3.75, .note = .{ .velocity = 0.95 } },
+
+        // bar 12
+        .{ .bar = 12, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 0.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 12, .beat = 1.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 1.25, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 12, .beat = 1.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 2.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 2.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 12, .beat = 3.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 3.25, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 12, .beat = 3.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 12, .beat = 3.75, .note = .{ .velocity = 0.18 } },
+
+        // bar 13
+        .{ .bar = 13, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 0.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 13, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 1.75, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 13, .beat = 2.0, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 2.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 2.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 13, .beat = 3.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 13, .beat = 3.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 13, .beat = 3.75, .note = .{ .velocity = 0.18 } },
+
+        // bar 14
+        .{ .bar = 14, .beat = 0.25, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 14, .beat = 0.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 0.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 1.5, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 14, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 2.25, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 14, .beat = 2.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 3.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 14, .beat = 3.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 14, .beat = 3.75, .note = .{ .velocity = 0.95 } },
+
+        // bar 15
+        .{ .bar = 15, .beat = 0.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 15, .beat = 0.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 15, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+        .{ .bar = 15, .beat = 1.25, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 15, .beat = 1.5, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 15, .beat = 1.75, .note = .{ .velocity = 0.18 } },
+        .{ .bar = 15, .beat = 2.0, .note = .{ .velocity = 0.4 } },
+        .{ .bar = 15, .beat = 2.25, .note = .{ .velocity = 0.4857142857142857 } },
+        .{ .bar = 15, .beat = 2.5, .note = .{ .velocity = 0.5714285714285714 } },
+        .{ .bar = 15, .beat = 2.75, .note = .{ .velocity = 0.6571428571428571 } },
+        .{ .bar = 15, .beat = 3.0, .note = .{ .velocity = 0.7428571428571429 } },
+        .{ .bar = 15, .beat = 3.25, .note = .{ .velocity = 0.8285714285714285 } },
+        .{ .bar = 15, .beat = 3.5, .note = .{ .velocity = 0.9142857142857143 } },
+        .{ .bar = 15, .beat = 3.75, .note = .{} },
+
+        // Finale (bars 16-23)
+        // bar 16
+        .{ .bar = 16, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 17
+        .{ .bar = 17, .beat = 1.0, .note = .{ .velocity = 0.95 } },
+
+        // bar 20
+        .{ .bar = 20, .beat = 0.25, .note = .{ .velocity = 0.5645161290322581 } },
+        .{ .bar = 20, .beat = 0.75, .note = .{ .velocity = 0.5935483870967743 } },
+        .{ .bar = 20, .beat = 1.25, .note = .{ .velocity = 0.6225806451612903 } },
+        .{ .bar = 20, .beat = 1.75, .note = .{ .velocity = 0.6516129032258065 } },
+        .{ .bar = 20, .beat = 2.25, .note = .{ .velocity = 0.6806451612903226 } },
+        .{ .bar = 20, .beat = 2.75, .note = .{ .velocity = 0.7096774193548387 } },
+        .{ .bar = 20, .beat = 3.25, .note = .{ .velocity = 0.7387096774193549 } },
+        .{ .bar = 20, .beat = 3.75, .note = .{ .velocity = 0.767741935483871 } },
+
+        // bar 21
+        .{ .bar = 21, .beat = 0.25, .note = .{ .velocity = 0.7967741935483871 } },
+        .{ .bar = 21, .beat = 0.75, .note = .{ .velocity = 0.8258064516129032 } },
+        .{ .bar = 21, .beat = 1.25, .note = .{ .velocity = 0.8548387096774194 } },
+        .{ .bar = 21, .beat = 1.75, .note = .{ .velocity = 0.8838709677419355 } },
+        .{ .bar = 21, .beat = 2.25, .note = .{ .velocity = 0.9129032258064516 } },
+        .{ .bar = 21, .beat = 2.75, .note = .{ .velocity = 0.9419354838709677 } },
+        .{ .bar = 21, .beat = 3.25, .note = .{ .velocity = 0.9709677419354839 } },
+        .{ .bar = 21, .beat = 3.75, .note = .{} },
+
+        // bar 22
+        .{ .bar = 22, .beat = 0.0, .note = .{ .velocity = 0.3 } },
+        .{ .bar = 22, .beat = 0.125, .note = .{ .velocity = 0.3225806451612903 } },
+        .{ .bar = 22, .beat = 0.25, .note = .{ .velocity = 0.34516129032258064 } },
+        .{ .bar = 22, .beat = 0.375, .note = .{ .velocity = 0.36774193548387096 } },
+        .{ .bar = 22, .beat = 0.5, .note = .{ .velocity = 0.3903225806451613 } },
+        .{ .bar = 22, .beat = 0.625, .note = .{ .velocity = 0.41290322580645156 } },
+        .{ .bar = 22, .beat = 0.75, .note = .{ .velocity = 0.4354838709677419 } },
+        .{ .bar = 22, .beat = 0.875, .note = .{ .velocity = 0.4580645161290322 } },
+        .{ .bar = 22, .beat = 1.0, .note = .{ .velocity = 0.48064516129032253 } },
+        .{ .bar = 22, .beat = 1.125, .note = .{ .velocity = 0.5032258064516129 } },
+        .{ .bar = 22, .beat = 1.25, .note = .{ .velocity = 0.5258064516129032 } },
+        .{ .bar = 22, .beat = 1.375, .note = .{ .velocity = 0.5483870967741935 } },
+        .{ .bar = 22, .beat = 1.5, .note = .{ .velocity = 0.5709677419354838 } },
+        .{ .bar = 22, .beat = 1.625, .note = .{ .velocity = 0.5935483870967742 } },
+        .{ .bar = 22, .beat = 1.75, .note = .{ .velocity = 0.6161290322580645 } },
+        .{ .bar = 22, .beat = 1.875, .note = .{ .velocity = 0.6387096774193548 } },
+        .{ .bar = 22, .beat = 2.0, .note = .{ .velocity = 0.6612903225806451 } },
+        .{ .bar = 22, .beat = 2.125, .note = .{ .velocity = 0.6838709677419355 } },
+        .{ .bar = 22, .beat = 2.25, .note = .{ .velocity = 0.7064516129032258 } },
+        .{ .bar = 22, .beat = 2.375, .note = .{ .velocity = 0.7290322580645161 } },
+        .{ .bar = 22, .beat = 2.5, .note = .{ .velocity = 0.7516129032258063 } },
+        .{ .bar = 22, .beat = 2.625, .note = .{ .velocity = 0.7741935483870968 } },
+        .{ .bar = 22, .beat = 2.75, .note = .{ .velocity = 0.7967741935483871 } },
+        .{ .bar = 22, .beat = 2.875, .note = .{ .velocity = 0.8193548387096774 } },
+        .{ .bar = 22, .beat = 3.0, .note = .{ .velocity = 0.8419354838709676 } },
+        .{ .bar = 22, .beat = 3.125, .note = .{ .velocity = 0.864516129032258 } },
+        .{ .bar = 22, .beat = 3.25, .note = .{ .velocity = 0.8870967741935483 } },
+        .{ .bar = 22, .beat = 3.375, .note = .{ .velocity = 0.9096774193548387 } },
+        .{ .bar = 22, .beat = 3.5, .note = .{ .velocity = 0.9322580645161289 } },
+        .{ .bar = 22, .beat = 3.625, .note = .{ .velocity = 0.9548387096774194 } },
+        .{ .bar = 22, .beat = 3.75, .note = .{ .velocity = 0.9774193548387096 } },
+        .{ .bar = 22, .beat = 3.875, .note = .{} },
+
+        // bar 23
+        .{ .bar = 23, .beat = 0.0, .note = .{} },
+    },
+}

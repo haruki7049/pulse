@@ -17,6 +17,16 @@ pub const Lane = enum(usize) {
     snare = 1,
     hihat = 2,
     tom = 3,
+
+    /// Voice a note on this lane plays when its score leaves `voice` out.
+    pub fn defaultVoice(self: Lane) Voice {
+        return switch (self) {
+            .kick => .kick,
+            .snare => .snare,
+            .hihat => .closed_hihat,
+            .tom => .mid_tom,
+        };
+    }
 };
 
 /// Number of lanes created on the kit instrument.
@@ -54,6 +64,14 @@ pub const Voice = enum {
     }
 };
 
+/// Payload of a note in the score of `lane`: the voice it plays and how hard (0.0 to 1.0).
+pub fn Note(comptime lane: Lane) type {
+    return struct {
+        voice: Voice = lane.defaultVoice(),
+        velocity: T = 1.0,
+    };
+}
+
 /// Mix gain applied to every open hi-hat hit (about -3.7 dB), so it sits in the kit instead of
 /// standing out over it.
 pub const open_hihat_gain: T = 0.65;
@@ -88,6 +106,13 @@ test "hi-hats share a lane and every voice maps to a kit lane" {
     try std.testing.expectEqual(Lane.hihat, Voice.open_hihat.lane());
     inline for (.{ Voice.high_tom, Voice.mid_tom, Voice.floor_tom }) |v| {
         try std.testing.expectEqual(Lane.tom, v.lane());
+    }
+}
+
+test "every lane's default voice is played on that lane" {
+    inline for (@typeInfo(Lane).@"enum".fields) |field| {
+        const lane: Lane = @enumFromInt(field.value);
+        try std.testing.expectEqual(lane, lane.defaultVoice().lane());
     }
 }
 
